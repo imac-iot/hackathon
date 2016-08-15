@@ -6,20 +6,19 @@
 	<script>
 		function sendcolor()
 		{
-    	var color = document.getElementById("color").value;
-    	var red = color[1]+color[2];
-    	var green = color[3]+color[4];
-    	var blue = color[5]+color[6];
-    	console.log(color);
-    	console.log(red);
-    	console.log(green);
-    	console.log(blue);
-    	alert("color" + color);
-    	document.getElementById('r').value= red;
-    	document.getElementById('g').value= green;
-    	document.getElementById('b').value= blue
-    	document.getElementById("getcolor").submit();
-    	//$.get("192.168.8.134", { r:red, g:green, b: blue });
+	    	var color = document.getElementById("color").value;
+			var red = color[1]+color[2];
+			var green = color[3]+color[4];
+			var blue = color[5]+color[6];
+			console.log(color);
+			console.log(red);
+			console.log(green);
+			console.log(blue);
+			alert("color" + color);
+			document.getElementById('r').value= red;
+			document.getElementById('g').value= green;
+			document.getElementById('b').value= blue
+			document.getElementById("getcolor").submit();
 
 		}
 	</script>

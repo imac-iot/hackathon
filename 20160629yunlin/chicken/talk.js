@@ -10,12 +10,14 @@ function handler (req, res) {
 	res.writeHead(200);
 	res.end(data); });
 }
+
 io.sockets.on('connection', function (socket) {
 	socket.on('addme',function(username) {
 		socket.username = username;
 		socket.emit('chat', 'SERVER', 'Hi '+ username+' You have connected');
 		socket.broadcast.emit('chat', 'SERVER', username + ' is on deck');
 	});
+
 	socket.on('sendchat', function(data) {
 		io.sockets.emit('chat', socket.username, data);
 	});
@@ -23,4 +25,5 @@ io.sockets.on('connection', function (socket) {
 	socket.on('disconnect', function() {
 		io.sockets.emit('chat', 'SERVER', socket.username + ' has left the building');
 	});
+
 });
